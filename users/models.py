@@ -1,12 +1,11 @@
 from django.db import models
 
-class PregoeiroManager(models.Manager):
-
+class UsersManager(models.Manager):
 	def search(self, query):
 		return self.get_queryset.filter(models.Q(nome__icontains=query | models.Q(matricula__icontains=query)))
 
 
-class Pregoeiro(models.Model):
+class Users(models.Model):
 
 	nome = models.CharField('Nome', max_length=100)
 	senha = models.CharField('Senha', max_length=10)
@@ -20,3 +19,4 @@ class Pregoeiro(models.Model):
 	email = models.EmailField('Email')
 	cpf = models.CharField('CPF', max_length=14)
 	rg = models.CharField('RG', max_length=8)
+
