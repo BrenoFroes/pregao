@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="{% static 'css/foundation-icons.css' %}">
   <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
   <link rel="icon" href="{% static 'img/cropped-Brasão_de_Campina_Grande_-_PB.svg_-32x32.png' %}" sizes="32x32" />
-<link rel="icon" href="{% static 'img/cropped-Brasão_de_Campina_Grande_-_PB.svg_-192x192.png' %}" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="{% static 'img/cropped-Brasão_de_Campina_Grande_-_PB.svg_-180x180.png' %}" />
+  <link rel="icon" href="{% static 'img/cropped-Brasão_de_Campina_Grande_-_PB.svg_-192x192.png' %}" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="{% static 'img/cropped-Brasão_de_Campina_Grande_-_PB.svg_-180x180.png' %}" />
 </head>
 <body>
   <script>
@@ -35,26 +35,26 @@
     <div class="top-bar-left">
       <ul class="menu" data-responsive-menu="accordion">
         <li class="menu-text">Pregão</li>
-        <li><a class="pref-link" href="#"><strong>Fornecedores</strong></a></li>
+        <li><a class="pref-link" href="{% url 'index' %}"><strong>Página Inicial</strong></a></li>
+        <li><a class="pref-link" href="{% url 'cadastro' %}"><strong>Fornecedores</strong></a></li>
         <li><a class="pref-link" href="#"><strong>Pregão</strong></a></li>
         <li><a class="pref-link" href="#"><strong>Relatórios</strong></a></li>
+        
       </ul>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
         {% if user.is_authenticated %}
-          <li><a class="pref-link">Bem vindo, {{ user.username }}</a></li>
-          <li><a class="button" href="{% url 'logout' %}">Sair</a></li>
+        <li><a class="pref-link">Bem vindo, {{ user.username }}</a></li>
+        <li><a class="button" href="{% url 'logout' %}">Sair</a></li>
         {% else %}
+        <li><a class="pref-link">Olá visitante, favor entre no sistema</a></li>
         <li><a class="button" href="{% url 'login' %}">Entrar</a></li>
         {% endif %}
       </ul>
     </div>
   </div>
-  <div class=" valign-middle row expanded columns background">
-    {% load static %}
-    <img src="{% static 'img/logo-prefeitura-campinagrande.png' %}" class="float-center">`
-  </div>
+
 
 
   {% block content %}{% endblock %}
