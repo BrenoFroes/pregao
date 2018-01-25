@@ -13,82 +13,77 @@
 
     <div class="tabs-content" data-tabs-content="deeplinked-tabs">
       <div class="tabs-panel is-active" id="juridica">
-        <form>
+        <form method="post">
+          {% csrf_token %}
           <div class="row">
             <div class="small-12 medium-3 columns">
-              <label>CNPJ:
-                <input type="text">
+              <label>{{ form.cnpj.label_tag }}
+                {{ form.cnpj }}
               </label>
             </div>
             <div class="small-12 medium-3 columns">
-              <label>Inscrição Estadual:
-                <input type="text">
+              <label>{{ form.inscricaoestadual.label_tag }}
+                {{ form.inscricaoestadual }}
               </label>
             </div>
             <div class="small-12 medium-6 columns">
-              <label>Razão Social:
-                <input type="text">
+              <label>{{ form.razaosocial.label_tag }}
+                {{ form.razaosocial }}
               </label>
             </div>
           </div>
           <div class="row">
             <div class="small-12 medium-6 columns">
-              <label>Nome Fantasia
-                <input type="text">
+              <label>{{ form.nomefantasia.label_tag }}
+                {{ form.nomefantasia }}
               </label>
             </div>
             <div class="small-12 medium-3 columns">
-              <label>Email
-                <input type="email">
+              <label>{{ form.email.label_tag }}
+                {{ form.email }}
               </label>
             </div>
             <div class="small-12 medium-3 columns">
-              <label>Telefone
-                <input type="tel">
+              <label>{{ form.telefone.label_tag }}
+                {{ form.telefone }}
               </label>
             </div>
           </div>
           <div class="row">
             <div class="small-12 medium-9 columns">
-              <label>Endereco
-                <input type="text">
+              <label>{{ form.endereco.label_tag }}
+                {{ form.endereco }}
               </label>
             </div>
             <div class="small-12 medium-3 columns">
-              <label>CEP
-                <input type="text">
+              <label>{{ form.cep.label_tag }}
+                {{ form.cep }}
               </label>
             </div>
           </div>
           <div class="row">
             <div class="small-12 medium-2 columns">
-              <label>Estado
-                <select>
-                  <option value="PB">Paraíba</option>
-                  <option value="PE">Pernambuco</option>
-                  <option value="RN">Rio Grande do Norte</option>
-                  <option value="CE">Ceará</option>
-                </select>
+              <label>{{ form.estado.label_tag }}
+                {{ form.estado }}
               </label>
             </div>
             <div class="small-12 medium-8 columns end">
-              <label>Cidade
-                <input type="text">
+              <label>{{ form.cidade.label_tag }}
+                {{ form.cidade }}
               </label>
             </div>
           </div>
           <div class="row">
             <div class="large-3 columns end">
               <fieldset class="fieldset">
-                <legend>Micro-Empresa</legend>
-                <input type="radio" name="me" value="yes" id="me-yes" required><label for="me-yes">Sim</label>
-                <input type="radio" name="me" value="no" id="me-no" checked><label for="me-no">Não</label>
+                <legend>{{ form.microempresa.label_tag }}</legend>
+                {{ form.microempresa }}
               </fieldset>
             </div>
           </div>
           <div class="row">
             <div class="large-6 columns">
-              <p><a class="button small expanded" href="#">Cadastrar</a></p>
+              <p><input type="submit" class="button small expanded" value="Cadastrar"></input></p>
             </div>
             <div class="large-6 columns">
               <p><a class="button secondary small expanded" href="#">Cancelar</a></p>
@@ -102,5 +97,6 @@
     </div>
   </div>
 </div>
+<br>
 {% endblock %}
 
