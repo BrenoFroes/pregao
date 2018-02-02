@@ -15,5 +15,4 @@ class Fornecedor(models.Model):
 	cep = models.CharField('CEP', max_length=8)
 	estado = models.CharField('Estado', max_length=100)
 	cidade = models.CharField('Cidade', max_length=100)
-	microempresa = models.CharField('Micro-Empresa', max_length=100)
-
+	microempresa = models.CharField('Micro-Empresa', max_length=3)

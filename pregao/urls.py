@@ -20,8 +20,8 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
 	path('', TemplateView.as_view(template_name='index.html'), name='index'),
 	path('', include('core.urls')),
-	path('users/', include('users.urls')),
-	path('users/', include('django.contrib.auth.urls')),
-    path('fornecedores/', include('fornecedores.urls')),
+	path('usuarios/', include('users.urls')),
+	path('usuarios/', include('django.contrib.auth.urls')),
+	path('fornecedores/', include('fornecedores.urls', namespace='fornecedores')),
     path('admin/', admin.site.urls),
 ]

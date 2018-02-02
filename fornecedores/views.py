@@ -3,7 +3,9 @@ from django.http import HttpResponse
 from .forms import FornecedoresForm
 from django.http import HttpResponseRedirect
 from .models import Fornecedor
+from django.contrib.auth.decorators import login_required
 
+#@login_required
 def cadastro(request):
 	form = FornecedoresForm()
 	if request.method == 'POST':
@@ -19,5 +21,5 @@ def cadastro(request):
 		else:
 			form = FornecedoresForm()
 
-	return render(request, 'cadastro.html', {'form': form})
+	return render(request, 'fornecedores/cadastro.html', {'form': form})
 
