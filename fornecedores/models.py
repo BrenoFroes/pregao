@@ -16,3 +16,6 @@ class Fornecedor(models.Model):
 	estado = models.CharField('Estado', max_length=100)
 	cidade = models.CharField('Cidade', max_length=100)
 	microempresa = models.CharField('Micro-Empresa', max_length=3)
+
+	def __str__(self):
+		return self.nomefantasia
